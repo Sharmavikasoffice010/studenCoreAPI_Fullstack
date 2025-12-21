@@ -1,0 +1,33 @@
+<h2>Student CRUD (Angular 18 Standalone)</h2>
+
+<div>
+  <input placeholder="Name" [(ngModel)]="model.name">
+  <input placeholder="Age" type="number" [(ngModel)]="model.age">
+  <input placeholder="Course" [(ngModel)]="model.course">
+
+  <button (click)="save()">
+    {{ isEdit ? 'Update' : 'Add' }}
+  </button>
+  <button *ngIf="isEdit" (click)="reset()">Cancel</button>
+</div>
+
+<hr>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Course</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let s of students">
+    <td>{{ s.name }}</td>
+    <td>{{ s.age }}</td>
+    <td>{{ s.course }}</td>
+    <td>
+      <button (click)="edit(s)">Edit</button>
+      <button (click)="delete(s.id)">Delete</button>
+    </td>
+  </tr>
+</table>
