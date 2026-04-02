@@ -17,6 +17,7 @@ namespace StudentApiCore.Controllers
         }
 
         // GET: api/students
+        //this is basically for comment
         [HttpGet]
         public async Task<IActionResult> Get()
         {
